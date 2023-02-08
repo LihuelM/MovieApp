@@ -1,0 +1,19 @@
+{
+  "name": "movieapp",
+  "version": "1.0.0",
+  "description": "El proyecto se basa en mostrar una una interfaz que se comunique con una API pública para consultar películas y mostrarlas en el frontend de manera dinámica.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LihuelM/MovieApp.git"
+  },
+  "author": "Lihuel Muracciole",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LihuelM/MovieApp/issues"
+  },
+  "homepage": "https://github.com/LihuelM/MovieApp#readme"
+}
