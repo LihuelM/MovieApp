@@ -1,5 +1,5 @@
 searchFormBtn.addEventListener('click', () => {
-    location.hash = '#search=';
+    location.hash = '#search=' + searchFormInput.value;
 });
 
 trendingBtn.addEventListener('click', () => {
@@ -10,44 +10,37 @@ arrowBtn.addEventListener('click', () => {
     location.hash = '#home';
 });
 
-
-
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
 function navigator() {
     console.log({ location });
 
-    if(location.hash.startsWith('#trends')) {
-        trendsPage();
-    } else if (location.hash.startsWith('#search=')) {
-        searchPage();
-    } else if (location.hash.startsWith('#movie=')) {
-        movieDetailPage();
-    } else if (location.hash.startsWith('#category=')) {
-        categoriesPage();
-    } else {
-        homePage();
-    }
-    
-    location.hash
-}
+    location.hash.startsWith('#trends')    ? trendsPage()       :
+    location.hash.startsWith('#search=')   ? searchPage()       :
+    location.hash.startsWith('#movie=')    ? movieDetailsPage() :
+    location.hash.startsWith('#category=') ? categoriesPage()   :
+    homePage()
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+} 
 
 function homePage() {
     console.log('HOME');
-
-    headerSection.style.background = '';
-    arrowBtn.classList.add('inactive'); 
-    arrowBtn.classList.remove('header-arrow--white');
-    headerCategoryTitle.classList.add('inactive');
-    genericSection.classList.add('inactive');
-    movieDetailSection.classList.add('inactive');
     
+    headerSection.style.background = '';
     headerSection.classList.remove('header-container--long');
+    arrowBtn.classList.remove('header-arrow--white');
     headerTitle.classList.remove('inactive'); 
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.remove('inactive');
     categoriesPreviewSection.classList.remove('inactive');
+    
+    arrowBtn.classList.add('inactive'); 
+    headerCategoryTitle.classList.add('inactive');
+    genericSection.classList.add('inactive');
+    movieDetailSection.classList.add('inactive');
 
     getTrendingMoviesPreview();
     getCategoriesPreview();
@@ -77,27 +70,30 @@ function searchPage() {
     headerSection.classList.remove('header-container--long');
     arrowBtn.classList.remove('inactive'); 
     arrowBtn.classList.remove('header-arrow--white');
-    headerCategoryTitle.classList.remove('inactive');
     genericSection.classList.remove('inactive');
+    searchForm.classList.remove('inactive');
     
+    headerCategoryTitle.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
     headerTitle.classList.add('inactive'); 
-    searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
+
+    const [_, query] = location.hash.split('=');
+    getMoviesBySearch(query);
 };
 
 function movieDetailPage() {
     console.log('MOVIE');
 
     // headerSection.style.background = '';
-    headerSection.classList.add('header-container--long');
     arrowBtn.classList.remove('inactive'); 
+    
+    movieDetailSection.classList.remove('inactive');
+    headerSection.classList.add('header-container--long');
     arrowBtn.classList.add('header-arrow--white'); 
     headerCategoryTitle.classList.add('inactive');
     genericSection.classList.add('inactive');
-    
-    movieDetailSection.classList.remove('inactive');
     headerTitle.classList.add('inactive'); 
     searchForm.classList.add('inactive');
     trendingPreviewSection.classList.add('inactive');
@@ -106,7 +102,7 @@ function movieDetailPage() {
 
 function categoriesPage() {
     console.log('CATEGORY');
-    
+
     headerSection.style.background = '';
     headerSection.classList.remove('header-container--long');
     arrowBtn.classList.remove('inactive'); 
@@ -119,6 +115,13 @@ function categoriesPage() {
     searchForm.classList.add('inactive');
     trendingPreviewSection.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
+
+    const [_, categoryData] = location.hash.split('=');
+    const [categoryId, categoryName] = categoryData.split('-');
+
+    headerCategoryTitle.innerHTML = categoryName;
+
+    getMoviesByCategory(categoryId);
 };
 
 
