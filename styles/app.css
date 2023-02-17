@@ -1,24 +1,15 @@
 /* General */
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
 * { box-sizing: border-box; }
 
-:root {
-  --purple-light-1: #FBFAFB;
-  --purple-light-2: #EEEAF2;
-  --purple-medium-1: #AA83C8;
-  --purple-medium-2: #8B48BF;
-  --purple-medium-3: #5C218A;
-  --purple-dark-1: #3E0F64;
-  --purple-dark-2: #2A0646;
-
-  --yellow: #EECC75;
-  --green: #CAD297;
-  --aqua: #B7EAC5;
-  --lightBlue: #A2EEE5;
-  --darkBlue: #8EA2EA;
-  --red: #F09D9D;
-
-  --font-family-titles: 'Dosis', sans-serif;
-  --font-family-text: 'Red Hat Display', sans-serif;
+:root {  
+  --base: #090911;
+  --text: #F1EEF5;
+  --accent: #00c6c2;
+  --variant: #333333;
+  
+  --font-family-titles: 'Annie Use Your Telescope', sans-serif;
+  --font-family-text: 'Annie Use Your Telescope', sans-serif;
   --font-weight-title1: 800;
   --font-weight-title2: 700;
   --font-weight-text1: 400;
@@ -26,12 +17,12 @@
 }
 
 html {
-  background-color: var(--purple-medium-3);
+  background-color: var(--base);
 }
 
 body {
-  background-color: var(--purple-light-1);
-  color: var(--purple-dark-2);
+  background-color: var(--base);
+  color: var(--text);
   font-family: var(--font-family-text);
   font-weight: var(--font-weight-text1);
   font-size: 16px;
@@ -44,9 +35,9 @@ h1, h2, h3 {
   padding: 0;
 }
 
-h1, h2 {
+h2 {
   font-size: 24px;
-  color: var(--purple-dark-2);
+  color: var(--text);
   font-family: var(--font-family-titles);
   font-weight: var(--font-weight-title1);
   margin: 0;
@@ -54,43 +45,49 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 18px;
-  color: var(--purple-dark-1);
+  font-size: 25px;
+  color: var(--text);
   font-weight: var(--font-weight-title2);
 }
 
 h3 {
-  color: var(--purple-dark-2);
+  color: var(--text);
   font-weight: var(--font-weight-text2);
-  font-size: 16px;
+  font-size: 20px;
+}
+
+p{
+  font-size: 18px;
 }
 
 input {
-  background-color: var(--purple-light-2);
-  color: var(--purple-medium-2);
+  background-color: var(--variant);
+  color: var(--text);
+  opacity: .5;
   border: none;
   font-size: 18px;
   padding-left: 16px;
 }
 
 input::placeholder {
-  color: var(--purple-medium-1);
+  color: var(--text);
   font-family: var(--font-family-text);
 }
 
 button {
-  background-color: var(--purple-dark-1);
+  background-color: var(--accent);
+  opacity: 0.7;
   border: none;
-  color: var(--purple-light-2);
+  color: var(--text);
   font-weight: var(--font-weight-text2);
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
 
 
 /* Shared */
 .header-container, .trendingPreview-header, .categoriesPreview-container {
-  padding: 0 24px;
+  padding: 0 15px;
 }
 
 .trendingPreview-container, .categoriesPreview-container, footer {
@@ -137,8 +134,19 @@ button {
   background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
 } 
 
+.header-container__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-icon img {
+  width: 90%;
+}
 .header-title {
-  margin-bottom: 16px;
+  font-size: 60px;
+  font-family: 'Annie Use Your Telescope';
+  font-weight: 800;
 }
 
 .header-arrow {
@@ -149,7 +157,7 @@ button {
   display: inline-block;
 }
 .header-arrow--white {
-  color: var(--purple-light-1);
+  color: var(--text);
 }
 
 .header-searchForm {
@@ -158,6 +166,7 @@ button {
   justify-content: center;
   width: 100%;
   flex-wrap: nowrap;
+  margin-top: 30px;
 }
 
 .header-searchForm input {
@@ -167,6 +176,10 @@ button {
   border-bottom-left-radius: 8px;
 }
 .header-searchForm button {
+  background-image: url('./assets/63517_natsu_search_icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(70%);
   width: 56px;
   height: 48px;
   border-top-right-radius: 8px;
@@ -213,11 +226,18 @@ button {
 
 /* Categories */
 .category-container {
-  width: 45%;
+  width: 30%;
+  margin: 3px;
+  background-color: var(--variant);
+  opacity: .5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .category-title {
-  margin-bottom: 8px;
+  margin: 8px;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
@@ -225,34 +245,15 @@ button {
 }
 
 .category-title::before {
-  content: '••••';
-  color: transparent;
+  /* content: '••••';
+  color: transparent; */
   /* TODO: cambiar color por ID de la categoría */
-  background-color: var(--idColor);
-  border-radius: 8px;
+  
+  
   margin-right: 8px;
   width: 8px;
   height: 8px;
 }
-#id28 { --idColor: var(--yellow); }
-#id12 { --idColor: var(--red); }
-#id16 { --idColor: var(--green); }
-#id35 { --idColor: var(--lightBlue); }
-#id80 { --idColor: var(--darkBlue); }
-#id99 { --idColor: var(--purple-dark-1); }
-#id18 { --idColor: var(--purple-medium-1); }
-#id10751 { --idColor: var(--yellow); }
-#id14 { --idColor: var(--red); }
-#id36 { --idColor: var(--green); }
-#id27 { --idColor: var(--lightBlue); }
-#id10402 { --idColor: var(--darkBlue); }
-#id9648 { --idColor: var(--purple-dark-1); }
-#id10749 { --idColor: var(--purple-medium-1); }
-#id878 { --idColor: var(--yellow); }
-#id10770 { --idColor: var(--red); }
-#id53 { --idColor: var(--green); }
-#id10752 { --idColor: var(--lightBlue); }
-#id37 { --idColor: var(--darkBlue); }
 
 
 /* Generic List (search, trending & category) */
@@ -282,7 +283,8 @@ button {
   margin-top: 403px;
   z-index: 1;
   position: absolute;
-  background-color: var(--purple-light-1);
+  background-color: var(--base);
+  opacity: .9;
 }
 
 .movieDetail-title {
@@ -343,8 +345,8 @@ button {
 
 /* Footer */
 footer {
-  background-color: var(--purple-medium-3);
-  color: var(--purple-light-2);
+  background-color: var(--base);
+  color: var(--text);
   text-align: center;
   height: 48px;
   display: flex;

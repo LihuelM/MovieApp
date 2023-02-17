@@ -13,6 +13,7 @@ const movieDetailCategoriesList = document.querySelector('#movieDetail .categori
 const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContainer');
 
 // Elements
+const headerIcon = document.querySelector('.header-icon');
 const headerTitle = document.querySelector('.header-title');
 const arrowBtn = document.querySelector('.header-arrow');
 const headerCategoryTitle = document.querySelector('.header-title--categoryView');

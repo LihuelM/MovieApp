@@ -16,19 +16,24 @@
 <body>
   <header id="header" class="header-container">
     <span class="header-arrow inactive">&lt;</span>
-    <h1 class="header-title">MovieApp</h1>
-    <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+    <div class="header-container__title">
+      <a class="header-icon" href="#">
+        <img src="./styles/assets/34531_folder_movies_icon.png" alt="">
+      </a>
+      <h1 class="header-title">MovieApp</h1>
+      <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+    </div>
 
     <form id="searchForm" class="header-searchForm">
-      <input type="text" placeholder="Buscar pelicula" />
-      <button id="searchBtn">🔍</button>
+      <input type="text" placeholder="Search Movie" />
+      <button id="searchBtn"></button>
     </form>
   </header>
 
   <section id="trendingPreview" class="trendingPreview-container">
     <div class="trendingPreview-header">
-      <h2 class="trendingPreview-title">Tendencias</h2>
-      <button class="trendingPreview-btn">Ver más</button>
+      <h2 class="trendingPreview-title">Popular</h2>
+      <button class="trendingPreview-btn">See more</button>
     </div>
 
     <article class="trendingPreview-movieList">
@@ -43,7 +48,7 @@
   </section>
 
   <section id="categoriesPreview" class="categoriesPreview-container">
-    <h2 class="categoriesPreview-title">Categorías</h2>
+    <h2 class="categoriesPreview-title">Categories</h2>
 
     <article class="categoriesPreview-list">
       <!-- <div class="category-container">
@@ -53,7 +58,7 @@
   </section>
 
   <section id="genericList" class="genericList-container inactive">
-    <div class="movie-container">
+    <!-- <div class="movie-container">
       <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
         class="movie-img"
@@ -75,7 +80,7 @@
         class="movie-img"
         alt="Nombre de la película"
       />
-    </div>
+    </div> -->
   </section>
 
   <section id="movieDetail" class="movieDetail-container inactive">
@@ -100,7 +105,7 @@
     </article>
 
     <article class="relatedMovies-container">
-      <h2 class="relatedMovies-title">Películas similares</h2>
+      <h2 class="relatedMovies-title">Similar movies</h2>
 
       <div class="relatedMovies-scrollContainer">
         <div class="movie-container">

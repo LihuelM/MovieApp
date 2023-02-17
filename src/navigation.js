@@ -37,6 +37,7 @@ function homePage() {
     searchForm.classList.remove('inactive');
     trendingPreviewSection.classList.remove('inactive');
     categoriesPreviewSection.classList.remove('inactive');
+    headerIcon.classList.remove('inactive');
     
     arrowBtn.classList.add('inactive'); 
     headerCategoryTitle.classList.add('inactive');
@@ -63,7 +64,7 @@ function trendsPage() {
     trendingPreviewSection.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
 
-    headerCategoryTitle.innerHTML = 'Tendencias';
+    headerCategoryTitle.innerHTML = 'Popular';
 
     getTrendingMovies();
 };
@@ -95,6 +96,7 @@ function movieDetailPage() {
     arrowBtn.classList.remove('inactive'); 
     movieDetailSection.classList.remove('inactive');
     
+    headerIcon.classList.add('inactive');
     headerSection.classList.add('header-container--long');
     arrowBtn.classList.add('header-arrow--white'); 
     headerCategoryTitle.classList.add('inactive');
