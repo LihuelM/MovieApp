@@ -11,3 +11,6 @@ Nota: Solo se encuentra disponible su versión mobile.
 Demo del proyecto: https://lihuelm.github.io/MovieApp/
 
 -------
+
+![image](https://user-images.githubusercontent.com/110037132/219667012-9aa90dcc-d264-478b-b57d-35ae2349a069.png)
+
