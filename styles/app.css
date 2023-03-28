@@ -272,8 +272,8 @@ button {
 
 .genericList-container .movie-container {
   display: inline-block;
-  width: 47.5%;
-  margin: 10px;
+  width: 45%;
+  margin-bottom: 20px;
 }
 
 .genericList-container .movie-img {
