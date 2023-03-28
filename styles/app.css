@@ -91,7 +91,8 @@ button {
 }
 
 .trendingPreview-container, .categoriesPreview-container, footer {
-  margin-top: 48px;
+  margin: 40px auto;
+  max-width: 1200px;
 }
 
 .trendingPreview-header, .categoriesPreview-title {
@@ -118,6 +119,7 @@ button {
 /* Header */
 .header-container {
   padding-top: 40px;
+  text-align: -webkit-center;
 }
 
 .header-container--long {
@@ -154,7 +156,7 @@ button {
   font-size: 36px;
   margin-bottom: 16px;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
 }
 .header-arrow--white {
   color: var(--text);
@@ -167,6 +169,7 @@ button {
   width: 100%;
   flex-wrap: nowrap;
   margin-top: 30px;
+  max-width: 1100px;
 }
 
 .header-searchForm input {
@@ -263,11 +266,14 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 32px 24px;
+  max-width: 1100px;
+  margin: 50px auto;
 }
 
 .genericList-container .movie-container {
   display: inline-block;
   width: 47.5%;
+  margin: 10px;
 }
 
 .genericList-container .movie-img {
